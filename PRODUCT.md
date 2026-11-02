@@ -35,11 +35,13 @@ Orders come in by message or form; the baker confirms by hand and arranges picku
 
 - Name: Rest Bakery.
 - Owner asked for the page to feel "fun and exciting", then rejected a playful sprinkle-themed design as "too childish" and chose a clean, modern bakery look. Energy should come from confident type, colour and motion, never kid-party motifs.
+- Owner pinned the look to a Dribbble shot of "Mooty" (macaron shop): blush-pink ground, deep maroon, heavy retro script wordmark with white outline, big photo beside a product picker with option cards.
 - Owner referenced a 99designs design (profiles/3208811/designs/1194989) that could not be viewed from this session; owner chose to let the design direction be decided freely.
 
 ## Evidence on Hand
 
-None. No photos, testimonials, reviews, press, or menu. Future work must not fabricate testimonials, ratings, prices or customer counts. Any illustrative menu content is placeholder and must be listed for replacement.
+- Instagram screenshot from the owner (Nov 1): sourdough, chocolate chip cookies, Halloween monster cookies, ghost brownies, scone-like bakes. Posts show a weekly menu drop ("Nov 7 Menu is LIVE!") and Saturday pickup ("Orders for this Saturday's pick up are open! Click on the link"). Photos cropped from it live in assets/photos/ (low resolution; originals should replace them).
+- No testimonials, ratings, prices or press. Never fabricate them.
 
 ## Product Principles
 

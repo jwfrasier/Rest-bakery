@@ -1,4 +1,4 @@
-/* Rest Bakery: quick order, order form, reveals */
+/* Rest Bakery: menu picker, order form, reveals */
 (() => {
   'use strict';
 
@@ -6,49 +6,99 @@
   const ORDER_EMAIL = 'hello@restbakery.example';
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const form = document.querySelector('[data-order]');
-  const orderSection = document.getElementById('order');
-  const bake = form.querySelector('#bake');
-  const qty = form.querySelector('#qty');
-  const date = form.querySelector('#date');
 
-  /* Sticky nav hairline once the page scrolls */
-  const nav = document.querySelector('.nav');
-  const onScroll = () => nav.classList.toggle('is-stuck', window.scrollY > 8);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  const ITEMS = {
+    'Chocolate chip cookies': {
+      name: 'Chocolate Chip Cookies',
+      desc: 'Thick, chewy and loaded with chocolate. The cookie the whole week revolves around.',
+      img: 'assets/photos/cookie.jpg',
+      alt: 'A thick chocolate chip cookie held in a hand, broken open to show melted chocolate',
+    },
+    'Country sourdough': {
+      name: 'Country Sourdough',
+      desc: 'Naturally leavened, scored by hand and baked to a deep, crackly golden crust.',
+      img: 'assets/photos/sourdough.jpg',
+      alt: 'A sourdough loaf with a deep golden, scored crust on a cutting board',
+    },
+    'Monster cookies': {
+      name: 'Monster Cookies',
+      desc: 'Chunky cookies packed with candy and chocolate, each one with its own goofy face.',
+      img: 'assets/photos/monster-cookies.jpg',
+      alt: 'Cookies decorated with googly eyes and chocolate smiles cooling on a rack',
+    },
+    'Fudgy brownies': {
+      name: 'Fudgy Brownies',
+      desc: 'Dense, chocolatey squares with a crackly top. Decorations change with the season.',
+      img: 'assets/photos/brownies.jpg',
+      alt: 'Fudgy brownies topped with white chocolate ghosts',
+    },
+  };
 
-  /* Quick order and menu links prefill the form */
-  function goToOrder(value) {
-    if (value) {
-      const match = [...bake.options].find((o) => o.value === value);
-      if (match) { bake.value = match.value; clearError('bake'); }
-    }
-    orderSection.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-    setTimeout(() => qty.focus({ preventScroll: true }), reduceMotion ? 0 : 700);
+  /* Next Saturday pickup date */
+  const sat = new Date();
+  sat.setDate(sat.getDate() + ((6 - sat.getDay() + 7) % 7));
+  document.querySelectorAll('[data-next-saturday]').forEach((el) => {
+    el.textContent = sat.toLocaleDateString(undefined, { weekday: 'long', month: 'short', day: 'numeric' });
+  });
+
+  /* Hero picker: selecting a bake swaps the photo and copy */
+  const pickForm = document.querySelector('[data-pick-form]');
+  const heroImg = document.querySelector('[data-hero-img]');
+  const heroName = document.querySelector('[data-hero-name]');
+  const heroDesc = document.querySelector('[data-hero-desc]');
+  const selectedLabel = document.querySelector('[data-selected-label]');
+  const qtyOut = document.querySelector('[data-qty-out]');
+  let qty = 1;
+
+  // Warm the cache so swaps are instant.
+  Object.values(ITEMS).forEach((it) => { const i = new Image(); i.src = it.img; });
+
+  function show(value) {
+    const it = ITEMS[value];
+    if (!it) return;
+    selectedLabel.textContent = value;
+    heroName.textContent = it.name;
+    heroDesc.textContent = it.desc;
+    if (heroImg.getAttribute('src') === it.img) return;
+    if (reduceMotion) { heroImg.src = it.img; heroImg.alt = it.alt; return; }
+    heroImg.classList.add('is-swapping');
+    setTimeout(() => {
+      heroImg.src = it.img;
+      heroImg.alt = it.alt;
+      const done = () => heroImg.classList.remove('is-swapping');
+      if (heroImg.complete) requestAnimationFrame(done); else heroImg.onload = done;
+    }, 220);
   }
 
-  document.querySelector('[data-quick]').addEventListener('submit', (e) => {
+  pickForm.addEventListener('change', (e) => { if (e.target.name === 'item') show(e.target.value); });
+
+  pickForm.querySelectorAll('[data-qty]').forEach((b) => {
+    b.addEventListener('click', () => {
+      qty = Math.max(1, Math.min(99, qty + Number(b.dataset.qty)));
+      qtyOut.textContent = qty;
+    });
+  });
+
+  /* Order form */
+  const form = document.querySelector('[data-order]');
+  const bake = form.querySelector('#bake');
+  const qtyInput = form.querySelector('#qty');
+  const orderSection = document.getElementById('order');
+
+  pickForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    goToOrder(e.currentTarget.querySelector('select').value);
+    const chosen = pickForm.querySelector('input[name="item"]:checked');
+    if (chosen) { bake.value = chosen.value; clearError('bake'); }
+    qtyInput.value = qty;
+    orderSection.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+    setTimeout(() => form.querySelector('#name').focus({ preventScroll: true }), reduceMotion ? 0 : 700);
   });
 
-  document.querySelectorAll('[data-pick]').forEach((a) => {
-    a.addEventListener('click', (e) => { e.preventDefault(); goToOrder(a.dataset.pick); });
+  qtyInput.addEventListener('change', () => {
+    const v = parseInt(qtyInput.value, 10);
+    qtyInput.value = Number.isFinite(v) ? Math.max(1, Math.min(99, v)) : 1;
   });
 
-  /* Quantity stepper */
-  const clampQty = (v) => Math.max(1, Math.min(99, Number.isFinite(v) ? v : 1));
-  form.querySelectorAll('[data-step]').forEach((b) => {
-    b.addEventListener('click', () => { qty.value = clampQty((parseInt(qty.value, 10) || 1) + Number(b.dataset.step)); });
-  });
-  qty.addEventListener('change', () => { qty.value = clampQty(parseInt(qty.value, 10)); });
-
-  /* Date: no past dates */
-  const now = new Date();
-  date.min = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
-
-  /* Validation */
   function setError(id) {
     form.querySelector(`#err-${id}`).hidden = false;
     form.querySelector(`#${id}`).setAttribute('aria-invalid', 'true');
@@ -58,7 +108,7 @@
     if (err) err.hidden = true;
     form.querySelector(`#${id}`).removeAttribute('aria-invalid');
   }
-  ['bake', 'date', 'name', 'contact'].forEach((id) => {
+  ['bake', 'name', 'contact'].forEach((id) => {
     const el = form.querySelector(`#${id}`);
     el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', () => clearError(id));
   });
@@ -71,22 +121,19 @@
     const name = form.querySelector('#name');
     const contact = form.querySelector('#contact');
     const bad = [];
-
     if (!bake.value) { setError('bake'); bad.push(bake); }
-    if (!date.value || date.value < date.min) { setError('date'); bad.push(date); }
     if (!name.value.trim()) { setError('name'); bad.push(name); }
     const c = contact.value.trim();
     if (!(/\S+@\S+\.\S+/.test(c) || c.replace(/\D/g, '').length >= 7)) { setError('contact'); bad.push(contact); }
-
     if (bad.length) { success.hidden = true; bad[0].focus(); return; }
 
-    const when = new Date(`${date.value}T12:00:00`).toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
+    const pickup = sat.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
     const lines = [
       'Hi Rest Bakery,',
       '',
       `I'd like to order: ${bake.value}`,
-      `Quantity: ${qty.value}`,
-      `Needed by: ${when}`,
+      `Quantity: ${qtyInput.value}`,
+      `Pickup: ${pickup}`,
       '',
       `Name: ${name.value.trim()}`,
       `Contact: ${c}`,
@@ -102,21 +149,15 @@
   });
 
   /* Reveals: content is visible without JS; this only adds the entrance */
-  const heroMedia = document.querySelector('.hero__media');
   if (!reduceMotion && 'IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
-      entries.forEach((en) => {
-        if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
-      });
-    }, { rootMargin: '0px 0px -10% 0px' });
-    document.querySelectorAll('.section-head, .item, .steps li, .order__intro, .form').forEach((el, i) => {
+      entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.why h2, .why__list li, .kitchen__head, .shot, .order__intro, .form').forEach((el, i) => {
       el.classList.add('reveal');
-      el.style.transitionDelay = `${(i % 3) * 80}ms`;
+      el.style.transitionDelay = `${(i % 3) * 70}ms`;
       io.observe(el);
     });
-    io.observe(heroMedia);
-  } else {
-    heroMedia.classList.add('is-in');
   }
 
   document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });

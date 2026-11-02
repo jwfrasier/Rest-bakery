@@ -4,207 +4,158 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rest Bakery</title>
-  <meta name="description" content="Rest Bakery: small-batch home baking, made to order. Cookies, cakes, cinnamon rolls, sourdough and more.">
-  <meta name="theme-color" content="#2647e0">
+  <meta name="description" content="Rest Bakery: small-batch home baking with a new menu every week and Saturday pickup. Cookies, sourdough, brownies and more.">
+  <meta name="theme-color" content="#fbe4df">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Schibsted+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Leckerli+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="nav" id="top">
-    <div class="wrap nav__inner">
-      <a class="logo" href="#top" aria-label="Rest Bakery, back to top">Rest<span class="logo__dot" aria-hidden="true"></span><span class="logo__sub">Bakery</span></a>
-      <nav aria-label="Main">
-        <ul class="nav__links">
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#how">How it works</a></li>
-        </ul>
+  <div class="site">
+    <header class="top">
+      <a class="logo" href="#top" aria-label="Rest Bakery, back to top" id="top">
+        <span class="logo__script">Rest</span>
+        <span class="logo__word">Bakery</span>
+      </a>
+      <nav class="top__nav" aria-label="Main">
+        <a href="#menu">This week</a>
+        <a href="#why">Why Rest</a>
+        <a href="#kitchen">From the kitchen</a>
+        <a class="top__order" href="#order">Order</a>
       </nav>
-      <a class="btn btn--blue btn--sm" href="#order">Order</a>
-    </div>
-  </header>
+    </header>
 
-  <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap hero__grid">
-        <div class="hero__copy">
-          <h1 id="hero-title">Baked to order, from my kitchen to yours.</h1>
-          <p class="hero__lede">Rest Bakery is small-batch home baking. Cookies, cakes, cinnamon rolls and sourdough, made fresh for your order and never sitting on a shelf.</p>
-          <form class="quick" data-quick aria-label="Start an order">
-            <label class="quick__label" for="quick-bake">I'd like</label>
-            <div class="quick__select">
-              <select id="quick-bake" name="quick">
-                <option>Cookies</option>
-                <option>Cake</option>
-                <option>Cupcakes</option>
-                <option>Cinnamon rolls</option>
-                <option>Bread</option>
-                <option>Brownies</option>
-              </select>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <button class="btn btn--blue" type="submit">
-              Start an order
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-          </form>
-        </div>
-        <figure class="hero__media">
-          <img src="assets/photos/hero.svg" alt="Drawing of a frosted layer cake on a stand beside a sourdough loaf and a croissant" width="800" height="1000">
-          <figcaption class="hero__tag">
-            <span>Made to order</span>
-            <span>Small batches</span>
-          </figcaption>
+    <main id="main">
+      <h1 class="sr-only">Rest Bakery: small-batch home baking with a new menu every week and Saturday pickup</h1>
+
+      <section class="hero" id="menu" aria-label="This week's menu">
+        <figure class="hero__photo">
+          <img data-hero-img src="assets/photos/cookie.jpg" alt="A thick chocolate chip cookie held in a hand, broken open to show melted chocolate" width="860" height="1120">
         </figure>
-      </div>
-    </section>
 
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker__track">
-        <span>Cookies</span><span>Layer cakes</span><span>Cinnamon rolls</span><span>Sourdough</span><span>Cupcakes</span><span>Brownies</span>
-        <span>Cookies</span><span>Layer cakes</span><span>Cinnamon rolls</span><span>Sourdough</span><span>Cupcakes</span><span>Brownies</span>
-      </div>
-    </div>
+        <form class="pick" data-pick-form>
+          <div class="pick__head" aria-live="polite">
+            <h2 class="pick__name" data-hero-name>Chocolate Chip Cookies</h2>
+            <p class="pick__desc" data-hero-desc>Thick, chewy and loaded with chocolate. The cookie the whole week revolves around.</p>
+          </div>
 
-    <section class="menu" id="menu" aria-labelledby="menu-title">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 id="menu-title">The menu</h2>
-          <p>A sample of what comes out of the oven. Ask what's baking this week, or request something of your own.</p>
-        </div>
-        <ul class="menu__grid" role="list">
-          <li class="item item--wide">
-            <a href="#order" data-pick="Cake" class="item__link">
-              <span class="item__media"><img src="assets/photos/cake.svg" alt="" width="800" height="600" loading="lazy"></span>
-              <span class="item__body">
-                <span class="item__name">Celebration cakes</span>
-                <span class="item__desc">Tall vanilla, chocolate or lemon layers with whipped buttercream. Message on top, candles on request.</span>
+          <p class="pick__note">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span>New menu every week. Next pickup: <strong data-next-saturday>Saturday</strong></span>
+          </p>
+
+          <fieldset class="pick__options">
+            <legend><span>Selected:</span> <strong data-selected-label>Chocolate chip cookies</strong></legend>
+            <label class="opt">
+              <input type="radio" name="item" value="Chocolate chip cookies" checked>
+              <span class="opt__card">
+                <img src="assets/photos/cookie.jpg" alt="" width="860" height="1120">
+                <span class="opt__text"><span class="opt__name">Chocolate chip</span><span class="opt__line">The house favorite</span></span>
               </span>
-            </a>
+            </label>
+            <label class="opt">
+              <input type="radio" name="item" value="Country sourdough">
+              <span class="opt__card">
+                <img src="assets/photos/sourdough.jpg" alt="" width="1104" height="1504">
+                <span class="opt__text"><span class="opt__name">Sourdough</span><span class="opt__line">Crackly crust, by the loaf</span></span>
+              </span>
+            </label>
+            <label class="opt">
+              <input type="radio" name="item" value="Monster cookies">
+              <span class="opt__card">
+                <img src="assets/photos/monster-cookies.jpg" alt="" width="1220" height="1112">
+                <span class="opt__text"><span class="opt__name">Monster cookies</span><span class="opt__line">Candy-loaded and goofy</span></span>
+              </span>
+            </label>
+            <label class="opt">
+              <input type="radio" name="item" value="Fudgy brownies">
+              <span class="opt__card">
+                <img src="assets/photos/brownies.jpg" alt="" width="1104" height="1224">
+                <span class="opt__text"><span class="opt__name">Brownies</span><span class="opt__line">Dense and crackle-topped</span></span>
+              </span>
+            </label>
+          </fieldset>
+
+          <div class="pick__buy">
+            <div class="qty" role="group" aria-label="Quantity">
+              <button type="button" data-qty="-1" aria-label="Decrease quantity"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+              <output data-qty-out aria-live="polite">1</output>
+              <button type="button" data-qty="1" aria-label="Increase quantity"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12M12 6v12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+            </div>
+            <button class="btn btn--maroon pick__cta" type="submit">Request this bake</button>
+          </div>
+          <p class="pick__small">No payment online. I'll reply to confirm price and pickup.</p>
+        </form>
+      </section>
+
+      <section class="why" id="why" aria-labelledby="why-title">
+        <svg class="why__flower why__flower--a" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 20c8-16 30-8 22 10 18-6 26 16 8 22 18 6 10 28-8 22 8 18-14 26-22 10-8 16-30 8-22-10-18 6-26-16-8-22-18-6-10-28 8-22-8-18 14-26 22-10z"/></svg>
+        <svg class="why__flower why__flower--b" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8l9 33 33 9-33 9-9 33-9-33-33-9 33-9z"/></svg>
+        <h2 id="why-title">Sweet Reasons to Pick Rest</h2>
+        <ul class="why__list" role="list">
+          <li>
+            <span class="why__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>A new menu every week</h3>
+            <p>Each week brings a fresh lineup, from everyday favorites to seasonal one-offs like Halloween monster cookies.</p>
           </li>
-          <li class="item">
-            <a href="#order" data-pick="Cookies" class="item__link">
-              <span class="item__media"><img src="assets/photos/cookies.svg" alt="" width="800" height="600" loading="lazy"></span>
-              <span class="item__body">
-                <span class="item__name">Chocolate chip cookies</span>
-                <span class="item__desc">Crisp edges, soft middles, plenty of chocolate. By the dozen.</span>
-              </span>
-            </a>
+          <li>
+            <span class="why__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 10h16M9 3v4M15 3v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Saturday pickup</h3>
+            <p>Order ahead during the week, then pick up your box on Saturday, baked for that day.</p>
           </li>
-          <li class="item">
-            <a href="#order" data-pick="Cinnamon rolls" class="item__link">
-              <span class="item__media"><img src="assets/photos/cinnamon-rolls.svg" alt="" width="800" height="600" loading="lazy"></span>
-              <span class="item__body">
-                <span class="item__name">Cinnamon rolls</span>
-                <span class="item__desc">Soft swirls of brown sugar and cinnamon under a cream cheese glaze.</span>
-              </span>
-            </a>
-          </li>
-          <li class="item">
-            <a href="#order" data-pick="Bread" class="item__link">
-              <span class="item__media"><img src="assets/photos/sourdough.svg" alt="" width="800" height="600" loading="lazy"></span>
-              <span class="item__body">
-                <span class="item__name">Country sourdough</span>
-                <span class="item__desc">Long, slow ferment, crackly crust, open crumb.</span>
-              </span>
-            </a>
-          </li>
-          <li class="item">
-            <a href="#order" data-pick="Cupcakes" class="item__link">
-              <span class="item__media"><img src="assets/photos/cupcakes.svg" alt="" width="800" height="600" loading="lazy"></span>
-              <span class="item__body">
-                <span class="item__name">Cupcakes</span>
-                <span class="item__desc">Your choice of flavor, frosted generously. Great for parties.</span>
-              </span>
-            </a>
-          </li>
-          <li class="item">
-            <a href="#order" data-pick="Brownies" class="item__link">
-              <span class="item__media"><img src="assets/photos/brownies.svg" alt="" width="800" height="600" loading="lazy"></span>
-              <span class="item__body">
-                <span class="item__name">Fudgy brownies</span>
-                <span class="item__desc">Shiny crackle top, dense chocolate center.</span>
-              </span>
-            </a>
+          <li>
+            <span class="why__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+            <h3>Small batches, home kitchen</h3>
+            <p>Everything is baked to order in my own kitchen, in batches small enough to get every one right.</p>
           </li>
         </ul>
-      </div>
-    </section>
+      </section>
 
-    <section class="how" id="how" aria-labelledby="how-title">
-      <div class="wrap how__grid">
-        <h2 id="how-title">How ordering works</h2>
-        <ol class="steps">
-          <li>
-            <span class="steps__n" aria-hidden="true">1</span>
-            <div>
-              <h3>Send a request</h3>
-              <p>Tell me what you'd like, how many and the date you need it. Add flavors, allergies or the occasion.</p>
-            </div>
-          </li>
-          <li>
-            <span class="steps__n" aria-hidden="true">2</span>
-            <div>
-              <h3>I confirm the details</h3>
-              <p>I'll reply to confirm availability, the price and when it will be ready. Nothing is charged until we agree.</p>
-            </div>
-          </li>
-          <li>
-            <span class="steps__n" aria-hidden="true">3</span>
-            <div>
-              <h3>Baked fresh, just for you</h3>
-              <p>Your order is mixed and baked in a small batch close to pickup, then boxed and ready to go.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
+      <section class="kitchen" id="kitchen" aria-labelledby="kitchen-title">
+        <div class="kitchen__head">
+          <h2 id="kitchen-title">Fresh from the kitchen</h2>
+          <p>Recent bakes. The menu changes weekly, so follow along to catch the next drop.</p>
+        </div>
+        <ul class="kitchen__grid" role="list">
+          <li class="shot shot--tall"><img src="assets/photos/sourdough.jpg" alt="A sourdough loaf with a deep golden, scored crust, sliced on a cutting board" width="1104" height="1504" loading="lazy"><span>Country sourdough</span></li>
+          <li class="shot"><img src="assets/photos/monster-cookies.jpg" alt="Cookies decorated with googly eyes and chocolate smiles cooling on a rack" width="1220" height="1112" loading="lazy"><span>Monster cookies</span></li>
+          <li class="shot"><img src="assets/photos/brownies.jpg" alt="Fudgy brownies topped with white chocolate ghosts" width="1104" height="1224" loading="lazy"><span>Ghost brownies</span></li>
+          <li class="shot"><img src="assets/photos/cookie.jpg" alt="A chocolate chip cookie broken open" width="860" height="1120" loading="lazy"><span>Chocolate chip</span></li>
+          <li class="shot shot--wide"><img src="assets/photos/scones.jpg" alt="Close-up of golden, craggy baked goods" width="1212" height="792" loading="lazy"><span>Fresh out of the oven</span></li>
+        </ul>
+      </section>
 
-    <section class="order" id="order" aria-labelledby="order-title">
-      <div class="wrap order__grid">
+      <section class="order" id="order" aria-labelledby="order-title">
         <div class="order__intro">
-          <h2 id="order-title">Start an order</h2>
-          <p>Fill this in and your email app will open with everything ready to send. I'll get back to you to confirm.</p>
+          <h2 id="order-title">Place your order</h2>
+          <p>Tell me what you'd like for pickup. Your email app opens with everything filled in, and I'll reply to confirm.</p>
         </div>
 
         <form class="form" data-order novalidate>
-          <div class="field">
-            <label for="bake">What would you like?</label>
-            <div class="select">
-              <select id="bake" name="bake" required aria-describedby="err-bake">
-                <option value="">Choose a bake</option>
-                <option>Cookies</option>
-                <option>Cake</option>
-                <option>Cupcakes</option>
-                <option>Cinnamon rolls</option>
-                <option>Bread</option>
-                <option>Brownies</option>
-                <option>Something else</option>
-              </select>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <p class="field__error" id="err-bake" hidden>Choose what you'd like me to bake.</p>
-          </div>
-
           <div class="form__row">
             <div class="field">
-              <label for="qty">Quantity</label>
-              <div class="stepper">
-                <button type="button" data-step="-1" aria-label="Decrease quantity"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
-                <input id="qty" name="qty" type="number" inputmode="numeric" min="1" max="99" value="1" aria-describedby="qty-hint">
-                <button type="button" data-step="1" aria-label="Increase quantity"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12M12 6v12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+              <label for="bake">What would you like?</label>
+              <div class="select">
+                <select id="bake" name="bake" required aria-describedby="err-bake">
+                  <option value="">Choose a bake</option>
+                  <option>Chocolate chip cookies</option>
+                  <option>Country sourdough</option>
+                  <option>Monster cookies</option>
+                  <option>Fudgy brownies</option>
+                  <option>Something else</option>
+                </select>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
-              <p class="field__hint" id="qty-hint">Dozens, cakes or loaves. We'll confirm details.</p>
+              <p class="field__error" id="err-bake" hidden>Choose what you'd like me to bake.</p>
             </div>
             <div class="field">
-              <label for="date">Needed by</label>
-              <input id="date" name="date" type="date" required aria-describedby="err-date">
-              <p class="field__error" id="err-date" hidden>Choose a date from today onward.</p>
+              <label for="qty">Quantity</label>
+              <input id="qty" name="qty" type="number" inputmode="numeric" min="1" max="99" value="1">
             </div>
           </div>
 
@@ -223,40 +174,30 @@
 
           <div class="field">
             <label for="notes">Notes <span class="field__optional">optional</span></label>
-            <textarea id="notes" name="notes" rows="3" placeholder="Flavors, allergies, the occasion, a message for the cake"></textarea>
+            <textarea id="notes" name="notes" rows="3" placeholder="Allergies, a special occasion, a different pickup day"></textarea>
           </div>
 
-          <button class="btn btn--blue btn--lg form__submit" type="submit">
-            Send order request
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
+          <button class="btn btn--maroon form__submit" type="submit">Send order request</button>
 
           <div class="form__success" data-success hidden tabindex="-1" role="status">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <div>
-              <p class="form__success-title">Your request is ready to send</p>
-              <p>Your email app should open with the order filled in. Hit send and I'll be in touch. <a href="#" data-mailto>Didn't open? Use this link.</a></p>
-            </div>
+            <p class="form__success-title">Your order is ready to send!</p>
+            <p>Your email app should open with the order filled in. Hit send and I'll be in touch. <a href="#" data-mailto>Didn't open? Use this link.</a></p>
           </div>
         </form>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <footer class="footer">
-    <div class="wrap footer__grid">
-      <p class="footer__word">Rest<span class="logo__dot" aria-hidden="true"></span></p>
-      <div class="footer__meta">
-        <p>Small-batch home baking, made to order.</p>
-        <nav aria-label="Footer">
-          <a href="#menu">Menu</a>
-          <a href="#how">How it works</a>
-          <a href="#order">Order</a>
-        </nav>
-        <p class="footer__small">© <span data-year>2026</span> Rest Bakery</p>
-      </div>
-    </div>
-  </footer>
+    <footer class="footer">
+      <p class="footer__logo"><span class="logo__script">Rest</span> <span class="logo__word">Bakery</span></p>
+      <p>Small-batch home baking. New menu weekly, Saturday pickup.</p>
+      <nav aria-label="Footer">
+        <a href="#menu">This week</a>
+        <a href="#kitchen">From the kitchen</a>
+        <a href="#order">Order</a>
+      </nav>
+      <p class="footer__small">© <span data-year>2026</span> Rest Bakery</p>
+    </footer>
+  </div>
 
   <script src="app.js" defer></script>
 </body>
