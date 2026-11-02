@@ -34,7 +34,7 @@ Orders come in by message or form; the baker confirms by hand and arranges picku
 ## Brand Commitments
 
 - Name: Rest Bakery.
-- Owner asked for the page to feel "fun and exciting".
+- Owner asked for the page to feel "fun and exciting", then rejected a playful sprinkle-themed design as "too childish" and chose a clean, modern bakery look. Energy should come from confident type, colour and motion, never kid-party motifs.
 - Owner referenced a 99designs design (profiles/3208811/designs/1194989) that could not be viewed from this session; owner chose to let the design direction be decided freely.
 
 ## Evidence on Hand

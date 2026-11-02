@@ -7,22 +7,24 @@ related_targets: []
 
 # Landing page (index.html)
 
-Scope: the Rest Bakery home page. Visitor mode: Persuade. Audience: neighbors and friends-of-friends arriving on a phone from a shared link. Action: start an order request (bake type, quantity, date, contact). Proof on hand: none; menu is a labeled sample, no prices, no testimonials.
+Scope: the Rest Bakery home page. Visitor mode: Persuade. Audience: neighbors and friends-of-friends arriving on a phone from a shared link. Action: start an order request (bake, quantity, date, contact). Proof on hand: none; menu is a sample, no prices, no testimonials.
+
+History: a sprinkle-jar direction was built and rejected by the owner as "too childish". Owner chose the standing exit: a clean modern bakery site, played straight.
 
 ## Direction contract
 
-THESIS: A home bakery page that behaves like an upturned sprinkle jar: rainbow jimmies physically rain onto the wordmark and pile up. It refuses the cream-ground, serif-headline "artisan bakery" page and the pastel cupcake template.
+THESIS: A clean, confident modern bakery page where the order is one step from the first viewport. Refuses kid-party motifs and the cream-and-serif artisan default.
 
-OWN-WORLD: Drenched colour fields per section (hot frosting pink, butter yellow, chocolate, mint) joined by authored frosting-drip edges. Rainbow jimmies are the material: scattered, piled, burst. Fat bouncy display face (Bagel Fat One), friendly grotesque body (Bricolage Grotesque), chocolate ink, chunky flat SVG bake illustrations with chocolate outlines, pill controls like candy.
+OWN-WORLD: White ground, near-black ink, one committed cobalt (#2647e0) carrying the ticker band, the order section and every action; cobalt line drawings on pale blue tiles in image slots until real photos arrive. Schibsted Grotesk 800 display with tight tracking, Hanken Grotesk body, pill controls.
 
-STORY: Visitor grins at the sprinkles, learns it's one home kitchen baking to order, browses the sample bake list, sees the three-step process, sends an order request.
+STORY: Visitor reads "Baked to order, from my kitchen to yours", picks a bake in the hero, lands in a prefilled order form, sends the request by email.
 
-FIRST VIEWPORT: Full-bleed pink canvas; "REST BAKERY" wordmark fills the width (two lines on phone), sprinkles falling and piling on its letter tops. Below it a chocolate slab carries the tagline, craving chips and "Start my order" button; sprinkles pile on its top edge. Nav top: wordmark, links, Order button.
+FIRST VIEWPORT: Large headline left, lede, inline "I'd like [bake] Start an order" control; 4:5 image tile right with a "Made to order / Small batches" tag.
 
-FORM: Sprinkle jar, candidate 4 of my ordered list (after one re-roll). seed:db2f540f6c6ea8d2. Signature interaction: tap/shake to add sprinkles with pile physics; sprinkle burst on order success. Motion grammar: gravity, settle, slide.
+FORM: Category standard (standing exit), chosen after the sprinkle jar. seed:db2f540f6c6ea8d2. Signature motion: hero image unveils by clip-path, continuous ticker, soft section reveals.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
 ## Unresolved
 
-Real menu, prices, contact email/handles, service area, pickup details.
+Real photos (replace assets/photos/*.svg), menu, prices, order email (ORDER_EMAIL in app.js), service area, pickup details.
