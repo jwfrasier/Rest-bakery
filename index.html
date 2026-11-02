@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rest Bakery</title>
+  <meta name="description" content="Rest Bakery: small-batch home baking, made to order. Cookies, cakes, cinnamon rolls and more, with sprinkles included.">
+  <meta name="theme-color" content="#ff4f9a">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="hero" id="top">
+    <canvas class="hero__canvas" aria-hidden="true"></canvas>
+
+    <nav class="nav" aria-label="Main">
+      <a class="nav__logo" href="#top" aria-label="Rest Bakery, back to top">
+        <svg class="nav__mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="#3a1c12"/>
+          <g stroke-width="3.4" stroke-linecap="round"><path d="M11 15l5-2" stroke="#ffd23f"/><path d="M22 11l5 3" stroke="#2ec4b6"/><path d="M13 24l3 4" stroke="#fff"/><path d="M24 22l5-1" stroke="#3a86ff"/><path d="M19 17l1 4" stroke="#ff6b35"/><path d="M27 29l-4 2" stroke="#8ac926"/></g>
+        </svg>
+        <span>Rest</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#bakes">Bakes</a></li>
+        <li><a href="#how">How it works</a></li>
+      </ul>
+      <a class="btn btn--choc nav__cta" href="#order">Order a bake</a>
+    </nav>
+
+    <div class="hero__stage">
+      <div class="hero__wordmark" data-wordmark>
+        <h1 class="hero__title">Rest Bakery</h1>
+      </div>
+
+      <form class="slab" data-quick aria-labelledby="quick-title">
+        <p class="slab__lede" id="quick-title">Small-batch bakes from one home kitchen, made to order. <strong>Sprinkles included.</strong></p>
+        <fieldset class="slab__chips">
+          <legend>What are you craving?</legend>
+          <label class="chip"><input type="radio" name="quick" value="Cookies" checked><span>Cookies</span></label>
+          <label class="chip"><input type="radio" name="quick" value="Cake"><span>Cake</span></label>
+          <label class="chip"><input type="radio" name="quick" value="Cupcakes"><span>Cupcakes</span></label>
+          <label class="chip"><input type="radio" name="quick" value="Cinnamon rolls"><span>Cinnamon rolls</span></label>
+          <label class="chip"><input type="radio" name="quick" value="Bread"><span>Bread</span></label>
+          <label class="chip"><input type="radio" name="quick" value="Surprise me"><span>Surprise me</span></label>
+        </fieldset>
+        <div class="slab__actions">
+          <button class="btn btn--choc btn--big" type="submit">
+            Start my order
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="btn btn--ghost" type="button" data-more-sprinkles>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l2 3M12 3v4M18 4l-2 3M5 13l3 1M19 13l-3 1M9 19l1-3M15 19l-1-3" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+            <span data-more-label>More sprinkles</span>
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="drip drip--pink" aria-hidden="true"></div>
+  </header>
+
+  <main id="main">
+    <section class="bakes" id="bakes" aria-labelledby="bakes-title">
+      <div class="wrap">
+        <div class="bakes__head">
+          <h2 id="bakes-title">The bake list</h2>
+          <p class="bakes__note">A sample of what comes out of the oven. Ask what's baking this week, or dream up something new.</p>
+        </div>
+
+        <div class="bakes__grid">
+          <article class="feature">
+            <svg class="feature__art" viewBox="0 0 320 260" role="img" aria-label="Illustration of a slice of birthday sprinkle cake">
+              <g stroke="#3a1c12" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+                <ellipse cx="160" cy="232" rx="140" ry="18" fill="#3a1c12" opacity=".18" stroke="none"/>
+                <path d="M40 120 L280 92 L280 220 L40 228 Z" fill="#fff"/>
+                <path d="M40 150 L280 126 L280 150 L40 172 Z" fill="#ff4f9a"/>
+                <path d="M40 196 L280 178 L280 200 L40 216 Z" fill="#ff4f9a"/>
+                <path d="M40 120 L280 92 L248 62 L20 98 Q14 108 40 120 Z" fill="#fff"/>
+                <path d="M40 120 C 52 140, 62 140, 66 120 C 72 146, 86 146, 92 117 C 98 138, 112 138, 118 114 C 126 140, 138 140, 144 111 C 152 132, 166 132, 170 108 C 178 134, 190 134, 196 105 C 204 128, 216 128, 222 102 C 228 122, 240 122, 246 99 C 254 118, 266 118, 280 92" fill="#fff"/>
+              </g>
+              <g stroke-width="6" stroke-linecap="round">
+                <path d="M60 100l12-3" stroke="#3a86ff"/><path d="M92 92l8 6" stroke="#ffd23f"/><path d="M120 98l12-2" stroke="#2ec4b6"/>
+                <path d="M150 86l6 8" stroke="#ff6b35"/><path d="M176 92l12-4" stroke="#7b2cbf"/><path d="M206 80l10 5" stroke="#8ac926"/>
+                <path d="M232 84l10-6" stroke="#3a86ff"/><path d="M110 82l10 2" stroke="#ff6b35"/><path d="M190 76l6-6" stroke="#ffd23f"/>
+                <path d="M74 186l10-2" stroke="#7b2cbf"/><path d="M140 182l8 4" stroke="#2ec4b6"/><path d="M210 170l10-3" stroke="#ffd23f"/>
+              </g>
+              <g stroke="#3a1c12" stroke-width="5" stroke-linejoin="round">
+                <path d="M196 60 V20" fill="none" stroke-linecap="round"/>
+                <rect x="188" y="22" width="16" height="44" rx="4" fill="#ffd23f"/>
+                <path d="M196 4 C 186 14, 190 20, 196 20 C 202 20, 206 14, 196 4 Z" fill="#ff6b35"/>
+              </g>
+            </svg>
+            <div class="feature__copy">
+              <h3>Birthday Sprinkle Cake</h3>
+              <p>Soft vanilla layers, whipped buttercream, and an irresponsible amount of sprinkles. Candles on request.</p>
+              <a class="btn btn--choc" href="#order" data-pick="Cake">Order a cake</a>
+            </div>
+          </article>
+
+          <ul class="menu" role="list">
+            <li class="menu__item">
+              <svg class="menu__art" viewBox="0 0 80 80" aria-hidden="true">
+                <circle cx="40" cy="40" r="32" fill="#d99a5b" stroke="#3a1c12" stroke-width="3.5"/>
+                <g fill="#3a1c12"><circle cx="28" cy="30" r="4.5"/><circle cx="48" cy="26" r="3.5"/><circle cx="52" cy="46" r="5"/><circle cx="32" cy="52" r="4"/><circle cx="42" cy="38" r="3"/></g>
+              </svg>
+              <div><h3>Chocolate Chip Cookies</h3><p>Crisp edges, gooey middles, puddles of chocolate. By the dozen.</p></div>
+              <a class="menu__pick" href="#order" data-pick="Cookies" aria-label="Order chocolate chip cookies">Order</a>
+            </li>
+            <li class="menu__item">
+              <svg class="menu__art" viewBox="0 0 80 80" aria-hidden="true">
+                <circle cx="40" cy="40" r="32" fill="#e8b878" stroke="#3a1c12" stroke-width="3.5"/>
+                <path d="M40 40 m-2 0 a 4 4 0 1 1 6 2 a 9 9 0 1 1 -14 -6 a 15 15 0 1 1 20 18 a 21 21 0 1 1 -28 -16" fill="none" stroke="#8a4a22" stroke-width="4" stroke-linecap="round"/>
+                <path d="M22 30 q8 -6 16 0 q8 6 16 0" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+              </svg>
+              <div><h3>Cinnamon Rolls</h3><p>Pillowy swirls, brown sugar, a cream cheese glaze you'll want to lick off the box.</p></div>
+              <a class="menu__pick" href="#order" data-pick="Cinnamon rolls" aria-label="Order cinnamon rolls">Order</a>
+            </li>
+            <li class="menu__item">
+              <svg class="menu__art" viewBox="0 0 80 80" aria-hidden="true">
+                <path d="M24 44 L56 44 L52 72 L28 72 Z" fill="#2ec4b6" stroke="#3a1c12" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M34 46 l1 24 M46 46 l-1 24" stroke="#3a1c12" stroke-width="2.5"/>
+                <path d="M20 46 C 14 36, 24 28, 30 30 C 30 18, 50 16, 52 28 C 62 26, 66 40, 60 46 Z" fill="#fff" stroke="#3a1c12" stroke-width="3.5" stroke-linejoin="round"/>
+                <circle cx="42" cy="16" r="6" fill="#ff3b6b" stroke="#3a1c12" stroke-width="3"/>
+                <g stroke-width="3.5" stroke-linecap="round"><path d="M28 38l5-2" stroke="#ffd23f"/><path d="M40 32l4 3" stroke="#3a86ff"/><path d="M50 38l4-3" stroke="#ff6b35"/></g>
+              </svg>
+              <div><h3>Cupcakes</h3><p>Any flavor you can dream up, frosted tall. Great for parties, office ambushes and Tuesdays.</p></div>
+              <a class="menu__pick" href="#order" data-pick="Cupcakes" aria-label="Order cupcakes">Order</a>
+            </li>
+            <li class="menu__item">
+              <svg class="menu__art" viewBox="0 0 80 80" aria-hidden="true">
+                <path d="M10 56 C 8 30, 30 18, 40 18 C 50 18, 72 30, 70 56 Q 70 64 62 64 L 18 64 Q 10 64 10 56 Z" fill="#c98a4b" stroke="#3a1c12" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M24 34 l8 8 M36 28 l8 8 M48 30 l8 8" stroke="#f2d3a1" stroke-width="4" stroke-linecap="round"/>
+              </svg>
+              <div><h3>Country Sourdough</h3><p>Long, slow ferment, crackly crust, open crumb. Made for butter.</p></div>
+              <a class="menu__pick" href="#order" data-pick="Bread" aria-label="Order sourdough bread">Order</a>
+            </li>
+            <li class="menu__item">
+              <svg class="menu__art" viewBox="0 0 80 80" aria-hidden="true">
+                <rect x="12" y="20" width="56" height="44" rx="6" fill="#5a2e1c" stroke="#3a1c12" stroke-width="3.5"/>
+                <path d="M18 32 q8 -5 14 0 t 14 0 t 14 0" fill="none" stroke="#8a5038" stroke-width="3" stroke-linecap="round"/>
+                <path d="M22 46 l6 4 M40 42 l4 6 M54 48 l-5 3" stroke="#8a5038" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+              <div><h3>Fudgy Brownies</h3><p>Shiny crackle top, dense chocolate middle. Corner pieces available to the brave.</p></div>
+              <a class="menu__pick" href="#order" data-pick="Surprise me" aria-label="Order brownies">Order</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="drip drip--yellow" aria-hidden="true"></div>
+    </section>
+
+    <section class="how" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <h2 id="how-title">From craving to <span class="nowrap">cake box</span></h2>
+        <div class="how__track">
+          <svg class="how__line" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 20 C 160 0, 340 40, 500 20 S 840 0, 1000 20" pathLength="100"/>
+          </svg>
+          <ol class="steps">
+            <li class="step">
+              <span class="step__dot step__dot--a" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><rect x="11" y="7" width="26" height="34" rx="4" fill="none" stroke="currentColor" stroke-width="3.5"/><path d="M17 17h14M17 24h14M17 31h8" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg>
+              </span>
+              <h3>Tell me your craving</h3>
+              <p>Pick a bake, a quantity and the day you need it. Add flavors, allergies or the occasion.</p>
+            </li>
+            <li class="step">
+              <span class="step__dot step__dot--b" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><path d="M24 6 C 16 14, 14 26, 18 34 L 30 34 C 34 26, 32 14, 24 6 Z" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/><path d="M24 34 V 44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M24 10 V 30 M19 16 q5 6 10 0" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+              </span>
+              <h3>I bake it fresh</h3>
+              <p>Mixed, baked and boxed in a small batch, just for your order. Nothing sits on a shelf.</p>
+            </li>
+            <li class="step">
+              <span class="step__dot step__dot--c" aria-hidden="true">
+                <svg viewBox="0 0 48 48"><path d="M8 18 L24 10 L40 18 L40 38 L8 38 Z" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/><path d="M8 18 L40 18 M24 10 V 38" stroke="currentColor" stroke-width="3" /><path d="M18 26 q6 -6 12 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+              </span>
+              <h3>We sort out pickup</h3>
+              <p>I'll message you to confirm the details, the price and when your box is ready.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="drip drip--choc" aria-hidden="true"></div>
+    </section>
+
+    <section class="order" id="order" aria-labelledby="order-title">
+      <div class="wrap order__wrap">
+        <div class="order__intro">
+          <h2 id="order-title">Build your bake</h2>
+          <p>Send a request and I'll get back to you to confirm. No payment now, no pressure, just a very excited baker.</p>
+          <svg class="order__jar" viewBox="0 0 200 240" aria-hidden="true">
+            <rect x="52" y="10" width="96" height="30" rx="8" fill="#ff4f9a" stroke="#3a1c12" stroke-width="5"/>
+            <path d="M44 48 Q 40 40 52 40 L 148 40 Q 160 40 156 48 L 168 76 Q 176 90 176 110 L 176 210 Q 176 230 156 230 L 44 230 Q 24 230 24 210 L 24 110 Q 24 90 32 76 Z" fill="#fff" fill-opacity=".55" stroke="#3a1c12" stroke-width="5" stroke-linejoin="round"/>
+            <g class="order__jar-fill" stroke-width="7" stroke-linecap="round"></g>
+            <rect x="48" y="132" width="104" height="52" rx="10" fill="#fff" stroke="#3a1c12" stroke-width="4"/>
+            <text x="100" y="166" text-anchor="middle" class="order__jar-label">REST</text>
+          </svg>
+        </div>
+
+        <form class="form" data-order novalidate>
+          <fieldset class="form__group">
+            <legend>What are we baking?</legend>
+            <div class="form__chips">
+              <label class="chip chip--light"><input type="radio" name="bake" value="Cookies" required><span>Cookies</span></label>
+              <label class="chip chip--light"><input type="radio" name="bake" value="Cake"><span>Cake</span></label>
+              <label class="chip chip--light"><input type="radio" name="bake" value="Cupcakes"><span>Cupcakes</span></label>
+              <label class="chip chip--light"><input type="radio" name="bake" value="Cinnamon rolls"><span>Cinnamon rolls</span></label>
+              <label class="chip chip--light"><input type="radio" name="bake" value="Bread"><span>Bread</span></label>
+              <label class="chip chip--light"><input type="radio" name="bake" value="Surprise me"><span>Surprise me</span></label>
+            </div>
+            <p class="form__error" id="err-bake" hidden>Pick a bake so I know what to preheat.</p>
+          </fieldset>
+
+          <div class="form__row">
+            <div class="field">
+              <label for="qty">How many?</label>
+              <div class="stepper">
+                <button type="button" data-step="-1" aria-label="Decrease quantity">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+                </button>
+                <input id="qty" name="qty" type="number" inputmode="numeric" min="1" max="99" value="1">
+                <button type="button" data-step="1" aria-label="Increase quantity">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12M12 6v12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+                </button>
+              </div>
+              <p class="field__hint">Dozens, cakes, loaves: we'll sort the details.</p>
+            </div>
+            <div class="field">
+              <label for="date">When do you need it?</label>
+              <input id="date" name="date" type="date" required aria-describedby="err-date">
+              <p class="form__error" id="err-date" hidden>Choose a date from today onward.</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="sprinkles">Sprinkle level: <output id="sprinkle-out" for="sprinkles">Lots</output></label>
+            <input id="sprinkles" name="sprinkles" type="range" min="0" max="3" step="1" value="2" aria-valuetext="Lots">
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="err-name">
+              <p class="form__error" id="err-name" hidden>Tell me who the bake is for.</p>
+            </div>
+            <div class="field">
+              <label for="contact">Phone or email</label>
+              <input id="contact" name="contact" type="text" autocomplete="email" required aria-describedby="err-contact">
+              <p class="form__error" id="err-contact" hidden>Add a phone number or email so I can confirm.</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="notes">Anything else? <span class="field__optional">(optional)</span></label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Flavors, allergies, the occasion, what to write on the cake…"></textarea>
+          </div>
+
+          <button class="btn btn--choc btn--big form__submit" type="submit">
+            Send my order request
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <div class="form__success" data-success hidden tabindex="-1">
+            <h3>Order request ready!</h3>
+            <p>Your email app should open with your order filled in. Hit send and I'll be in touch to confirm. <a href="#" data-mailto>Email app didn't open? Send it here.</a></p>
+          </div>
+        </form>
+      </div>
+      <div class="drip drip--mint" aria-hidden="true"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__wrap">
+      <p class="footer__word">Rest Bakery</p>
+      <p>Small-batch home baking, made to order.</p>
+      <nav aria-label="Footer">
+        <a href="#bakes">Bakes</a>
+        <a href="#how">How it works</a>
+        <a href="#order">Order a bake</a>
+      </nav>
+      <p class="footer__small">© <span data-year>2026</span> Rest Bakery</p>
+    </div>
+  </footer>
+
+  <canvas class="burst" aria-hidden="true"></canvas>
+  <script src="app.js" defer></script>
+</body>
+</html>
